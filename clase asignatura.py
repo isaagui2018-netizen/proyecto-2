@@ -1,15 +1,14 @@
-class Asignatura:
-    """
-    Representa una asignatura general que puede tener varios cursos.
-    """
-    def __init__(self, codigo: str, nombre: str, creditos: int):
-        self.__codigo = codigo
-        self.__nombre = nombre
-        self.__creditos = creditos
-        self.__cursos = []
+class Curso:
+    def __init__(self, nombre, codigo):
+        self.nombre = nombre
+        self.codigo = codigo
+        self.profesor = None
+        self.estudiantes = []
 
-    def agregarCurso(self, curso):
-        self.__cursos.append(curso)
+    def asignarProfesor(self, profesor):
+        self.profesor = profesor
 
-    def obtenerCursos(self):
-        return self.__cursos
+    def inscribirEstudiante(self, estudiante):
+        self.estudiantes.append(estudiante)
+
+
